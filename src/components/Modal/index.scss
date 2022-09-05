@@ -1,0 +1,58 @@
+.Modal {
+  position: absolute;
+  top: 20%;
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 400px;
+  background-color: rgba(43, 42, 42, 0.744);
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  gap: 20px;
+
+  &__header {
+    margin-left: 20px;
+  }
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+  }
+  &__desc {
+    padding: 0 20px;
+    padding-bottom: 0;
+  }
+
+  .my__series {
+    display: flex;
+  }
+  .my_container_series {
+    margin-left: 20px;
+  }
+  &__img {
+    width: 300px;
+  
+    height: 400px;
+  }
+  .vote {
+    align-self: flex-end;
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+  .average {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  
+}
+
+
