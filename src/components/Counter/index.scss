@@ -1,19 +1,39 @@
+@import "../../style/mixins";
+
 .counter {
-  margin: 5px 0;
-  display: flex;
+  @include box-model(5px 0, 0, 4px 10 px);
+  @include flex-element(0, center, center, nowrap, 15px );
   height: 20px;
   font-size: 20px;
-  align-items: center;
-  gap: 5px;
   color: white;
- justify-content: flex-end;
-   button{border: 0;
+  button {
+    @include box-model(0,0,5);
+    border: 0;
     font-weight: bold;
     background-color: none;
     cursor: pointer;
-    color:red;
-    border-radius: 4px;}
-    p { font-weight: 100;}
+    color: red;
+    border-radius: 4px;
+    box-shadow: -1px 0px 8px 0px #ffffff54;
+    background: linear-gradient(to bottom, #2121212a 5%, #12121256 100%);
+    background-color: #e3e8e52b;
+    border-radius: 24px;
+
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 26px;
+
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
+  }
+  button:hover {
+    background: linear-gradient(to bottom, #e3e8e5b9 5%, #e3e8e5b9 100%);
+    background-color: #dbd4db29;
+    color: red;
+  }
+  p {
+    font-weight: 100;
+  }
 }
-
-

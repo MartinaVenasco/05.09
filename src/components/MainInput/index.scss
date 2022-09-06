@@ -1,13 +1,14 @@
+@import "../../style/mixins";
+
 .MainInput {
+  @include flex-element(row, center, stretch, nowrap, 30px);
   height: 40px;
   display: flex;
-  justify-content: center;
-  top: 980px;
+  @include element-position (static, 980px, auto, auto, auto, 12000);
   left: calc(50% - 180px);
-  gap: 30px;
   transition: all 0.35s;
-  z-index: 12000;
   margin-bottom: 50px;
+
   input {
     padding-left: 14px;
     width: 240px;
@@ -21,6 +22,7 @@
     border-radius: 25px;
     box-shadow: 4px 0px 8px rgba(255, 255, 255, 0.43);
   }
+  
   button {
     width: 40px;
     border: 0;
@@ -28,13 +30,12 @@
     background-color: rgba(193, 193, 193, 0.514);
     border-left: 1px solid lightgrey;
     cursor: pointer;
-   transition: all 0.35s;
+    transition: all 0.35s;
     border-radius: 100%;
   }
-  button:hover {transform: scale(1.1);
+  button:hover {
+    transform: scale(1.1);
     background-color: red;
-  color:white;}
+    color: white;
+  }
 }
-
-
-

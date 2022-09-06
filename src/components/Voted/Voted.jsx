@@ -4,6 +4,7 @@ import { memo } from "react";
 const Voted = ({ cardData, modalVisibility }) => {
   return (
     <div className="VotedList">
+  
       {cardData.map((cardData, ii) => (
         <MainCard
           modalVisibility={modalVisibility}

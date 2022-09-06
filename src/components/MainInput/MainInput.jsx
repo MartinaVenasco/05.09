@@ -8,7 +8,7 @@ const MainInput = ({ inputValue, setInputValue, isRendered, onFormsubmit }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", () =>
-      window.scrollY >= 1900
+      window.scrollY >= 1700
         ? setInputVisibility(true)
         : setInputVisibility(false)
     );
@@ -21,17 +21,14 @@ const MainInput = ({ inputValue, setInputValue, isRendered, onFormsubmit }) => {
   //   inputRef.current.focus();
   // }, []);
 
-  const onHandleSubmit = (e) => {
-    e.preventDefault();
-    onFormsubmit(!isRendered);
-  };
+  const onHandleSubmit = (e) => {e.preventDefault(); onFormsubmit(!isRendered);}
 
   const onHandleInput = (e) => setInputValue(e.target.value);
 
   // console.log(inputValue);
 
   return (
-    <form className="MainInput" onSubmit={onHandleSubmit}>
+    <form className="MainInput"  onSubmit={onHandleSubmit}>
       {" "}
       {isInputVisibile && (
         <>
@@ -41,6 +38,7 @@ const MainInput = ({ inputValue, setInputValue, isRendered, onFormsubmit }) => {
             maxLength="6"
             placeholder="search by ID: 324688"
             type="text"
+            
           />
           <button type="submit">
             {" "}

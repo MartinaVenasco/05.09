@@ -3,7 +3,6 @@ import MainInput from "./components/MainInput";
 import MainSection from "./components/MainSection";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
-import logo from "./logo.png";
 import "./App.scss";
 import { useState, useRef } from "react";
 
@@ -13,34 +12,43 @@ function App() {
   const [modalData, setModalData] = useState({});
   const [isModalVisibile, setModalVisibility] = useState(false);
   const TopRated = useRef(null);
+  const UpComing = useRef(null);
+  const ScrollTop = useRef(null);
+  const InputRef = useRef(null);
+
   const onHandleModal = (data) => {
     setModalData(data);
     setModalVisibility(!isModalVisibile);
   };
   console.log(inputValue);
 
+
+
   return (
     <div className="App">
-      <div className="topContent">
+      <div className="topContent" ref={ScrollTop}>
         {" "}
-        <div className="geeks"></div>
-        <img className="logo" src={logo} alt="logo"></img>
-        <Navbar TopRated={TopRated} />
+       
+        <Navbar TopRated={TopRated} UpComing={UpComing} InputRef={InputRef}/>
       </div>
 
       <div className="Main_section">
-        <MainSection modalVisibility={onHandleModal} TopRated={TopRated} />
+        <MainSection modalVisibility={onHandleModal} ScrollTop={ScrollTop} UpComing={UpComing} TopRated={TopRated} />
       </div>
+      <div className="inputSection" InputRef={InputRef} ref={InputRef}>
       <MainInput
         inputValue={inputValue}
         setInputValue={setInputValue}
         isRendered={isRendered}
         onFormsubmit={setRendered}
-      />
+       
+     
+      /></div>
       <MovieEntity
         movieID={inputValue}
         setInputValue={setInputValue}
         isRendered={isRendered}
+        ScrollTop={ScrollTop}
       />
       <Modal
         data={modalData}
